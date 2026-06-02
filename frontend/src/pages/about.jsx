@@ -1,0 +1,13 @@
+
+
+
+const About =() =>{
+    return (
+        <div>
+
+            <h1> Benvenue sur la page error 404</h1>
+        </div>
+    )
+}
+
+export default About
