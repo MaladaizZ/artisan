@@ -2,10 +2,22 @@ const express = require('express');
 const app = express();
 const ENV = require('./config');
 require('dotenv').config();
+const cookieParser = require('cookie-Parser')
+const indexRouter = require('./routes/indexRoute');
+const cors = require ('cors');
+
+
+//acceptez les requetes de toutes les origines
+app.use(express.json());
+app.use(cors({
+    origin: '*'
+}));
 
 
 // connection au serveur
 const PORT = ENV.PORT || 8080;
+app.use(cookieParser());
+app.use(indexRouter);
 
 app.get('/', (req, res) => {
     res.send('Bienvenue sur Artisan');

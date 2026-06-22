@@ -10,7 +10,8 @@ router.get('/', async (req, res) => {
         name: process.env.NAME || 'Artisan API',
         version:'1.0',
         statut: 200,
-        message: 'Welcome to Artisan API'
+        message: 'Bienvenue sur l\'API Artisan'
     });
 });
 
+module.exports = router;
