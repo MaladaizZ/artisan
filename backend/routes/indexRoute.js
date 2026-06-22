@@ -1,9 +1,10 @@
 const express = require('express');
 const router = express.Router();
+const artisanRoutes = require('./artisanRoute');
+const categoryRoutes = require('./categorieRoute');
+const specialityRoutes = require('./specialiteRoute');
 
-const userRoute = require('../routes/userRoute');
 const artisanRoute = require('./artisanRoute');
-const serviceRoute = require('../routes/serviceRoute');
 
 router.get('/', async (req, res) => {
     res.status(200).json({

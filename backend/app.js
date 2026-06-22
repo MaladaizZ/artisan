@@ -13,18 +13,17 @@ app.use(cors({
     origin: '*'
 }));
 
-
 // connection au serveur
-const PORT = ENV.PORT || 8080;
+const PORT = ENV.PORT || 8000;
 app.use(cookieParser());
-app.use(indexRouter);
+//app.use(indexRouter);
 
 app.get('/', (req, res) => {
     res.send('Bienvenue sur Artisan');
 });
 
 app.listen(PORT, () => {
-    console.log('Server artisan listening on port ' + PORT);
+    console.log('Server trouvetonartisan listening on port ' + PORT);
 });
 
 //connection a sequelize
@@ -38,3 +37,11 @@ sequelize.authenticate()
     });
 
    
+//middleware pour les erreurs 
+
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).json({ error: 'Une erreur est survenue!' });
+});
+
+module.exports = app;
