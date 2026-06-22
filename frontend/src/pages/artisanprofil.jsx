@@ -4,7 +4,7 @@ const ArtisanProfil =() =>{
     return (
         <div>
 
-            <h1> Benvenur sur la page artisan profil</h1>
+            <h1> Benvenue sur la page artisan profil</h1>
         </div>
     )
 }
