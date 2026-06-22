@@ -24,3 +24,5 @@ sequelize.authenticate()
     .catch(err => {
         console.error('Impossible de se connecter à la base de donnees:', err);
     });
+
+   

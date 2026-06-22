@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 const userRoute = require('../routes/userRoute');
-const artisanRoute = require('../routes/artisanRoute');
+const artisanRoute = require('./artisanRoute');
 const serviceRoute = require('../routes/serviceRoute');
 
 router.get('/', async (req, res) => {

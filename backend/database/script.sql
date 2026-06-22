@@ -26,6 +26,10 @@ CREATE TABLE IF NOT EXISTS `artisan` (
   KEY `id_specialité` (`id_specialite`)
 );
 
+ALTER TABLE `artisan`
+  ADD CONSTRAINT `artisan_ibfk_1` FOREIGN KEY (`id_specialite`) REFERENCES `specialite` (`id_specialite`);
+
+
 --creation de la table "categorie"
 DROP TABLE IF EXISTS `categorie`;
 CREATE TABLE IF NOT EXISTS `categorie` (
@@ -43,3 +47,7 @@ CREATE TABLE IF NOT EXISTS `specialite` (
   PRIMARY KEY (`id_specialite`),
   KEY `id_categorie` (`id_categorie`)
 );
+
+
+ ALTER TABLE `specialite`
+  ADD CONSTRAINT `specialite_ibfk_1` FOREIGN KEY (`id_categorie`) REFERENCES `categorie` (`id_categorie`); 
