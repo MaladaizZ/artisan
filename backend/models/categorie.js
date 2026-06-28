@@ -4,18 +4,18 @@ const sequelize = require("../config/db");
 const Categorie = sequelize.define(
   "Categorie",
   {
-    id: {
+    id_categorie: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
     },
-    nom: {
+    nom_categorie: {
       type: DataTypes.STRING,
       allowNull: false,
     },
   },
   {
-    tableName: "categories",
+    tableName: "categorie",
     timestamps: false,
   },
 );

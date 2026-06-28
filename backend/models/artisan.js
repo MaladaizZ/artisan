@@ -2,33 +2,33 @@ const { DataTypes } = require('sequelize');
 const sequelize = require('../config/db');
 const bcrypt = require('bcrypt');
 
-const Artisan = sequelize.define('Artisans', {
-  id: {
+const Artisan = sequelize.define('Artisan', {
+  id_artisan: {
     type: DataTypes.INTEGER,
     autoIncrement: true,
     primaryKey: true,
   },
-  name: {
+  nom_artisan: {
     type: DataTypes.STRING(100),
     allowNull: false,
   },
-  speciality: {
+  id_specialite: {
     type: DataTypes.STRING(20),
     allowNull: false,
   },
-  note: {
+  note_artisan: {
     type: DataTypes.DECIMAL(5,2),
     allowNull: true,
   },
-  ville: {
+  ville_artisan: {
     type: DataTypes.STRING(50),
     allowNull: false,
   },
-  apropos: {
+  apropos_artisan: {
     type: DataTypes.STRING(255),
     allowNull: true,
   },
-  email: {
+  email_artisan: {
     type: DataTypes.STRING(150),
     allowNull: false,
     unique: true,
@@ -36,7 +36,7 @@ const Artisan = sequelize.define('Artisans', {
       isEmail: true,
     },
   },
-  website: {
+  site_artisan: {
     type: DataTypes.STRING(255),
     allowNull: true,
     defaultValue: 'https://',
@@ -50,7 +50,7 @@ const Artisan = sequelize.define('Artisans', {
     type: DataTypes.INTEGER,
     allowNull: false,
   },
-  top: {
+  top_artisan: {
     type: DataTypes.BOOLEAN,
     allowNull: false,
     defaultValue: false,

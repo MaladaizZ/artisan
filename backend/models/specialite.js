@@ -4,12 +4,12 @@ const sequelize = require("../config/db");
 const Specialite = sequelize.define(
   "Specialite",
   {
-    id: {
+    id_specialite: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
     },
-    nom: {
+    nom_specialite: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -19,7 +19,7 @@ const Specialite = sequelize.define(
     },
   },
   {
-    tableName: "specialites",
+    tableName: "specialite",
     timestamps: false,
   },
 );

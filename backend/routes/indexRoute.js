@@ -14,10 +14,8 @@ router.get('/', async (req, res) => {
     });
 });
 
-router.get('/artisan', async (req, res )=>{
-    res.statut(200).json({
-        name: 'erwan'
-    })
-})
+router.use('/artisans', artisanRoutes);
+router.use('/categories', categorieRoutes);
+router.use('/specialites', specialiteRoutes);
 
 module.exports = router;

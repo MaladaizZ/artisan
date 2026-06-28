@@ -16,7 +16,7 @@ app.use(cors({
 // connection au serveur
 const PORT = ENV.PORT || 8000;
 app.use(cookieParser());
-//app.use(indexRouter);
+app.use(indexRouter);
 
 app.get('/', (req, res) => {
     res.send('Bienvenue sur Artisan');
