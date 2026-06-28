@@ -1,65 +1,64 @@
-const specialityService = require("../services/specialityService");
+const specialiteService = require("../services/specialiteService");
 
 exports.getAllSpecialities = async (req, res) => {
-    const specialities = await specialityService.getAllSpecialities();
     try {
+        const specialities = await specialiteService.getAllSpecialities();
         res.json(specialities);
     } catch (error) {
-        res.status(500).json({ message: "Erreur serveur", error: err.message });
+        res.status(500).json({ message: "Erreur serveur", error: error.message });
     }
 };
 
-exports.getSpecialityById = async (req, res) => {
-    const speciality = await specialityService.getSpecialityById(req.params.id);
+exports.getSpecialiteById = async (req, res) => {
     try {
-        if (!speciality)
+        const specialite = await specialiteService.getSpecialiteById(req.params.id);
+        if (!specialite)
             return res.status(404).json({ message: "Spécialité introuvable" });
-        res.json(speciality);
+        res.json(specialite);
     } catch (error) {
-        res.status(500).json({ message: "Erreur serveur", error: err.message });
+        res.status(500).json({ message: "Erreur serveur", error: error.message });
     }
 };
 
-exports.createSpeciality = async (req, res) => {
+exports.createSpecialite = async (req, res) => {
     try {
-        const speciality = await specialityService.createSpeciality(req.body);
-        res.status(201).json(speciality).send('Spécialité créée avec succès');
-    } catch (err) {
-        res.status(400).json({ message: err.message });
+        const specialite = await specialiteService.createSpecialite(req.body);
+        res.status(201).json(Specialite);
+    } catch (error) {
+        res.status(400).json({ message: error.message });
     }
 };
 
-exports.updateSpeciality = async (req, res) => {
-    const speciality = await specialityService.patchSpeciality(req.params.id, req.body);
+exports.updateSpecialite = async (req, res) => {
     try {
-        if (!speciality)
+        const specialite = await specialiteService.updateSpecialite(req.params.id, req.body);
+        if (!specialite)
             return res.status(404).json({ message: "Spécialité introuvable" });
-        res.json(speciality).send('Spécialité modifiée avec succès');
+        res.json(specialite);
     } catch (error) {
-        res.status(500).json({ message: "Erreur serveur", error: err.message });
+        res.status(500).json({ message: "Erreur serveur", error: error.message });
     }
 };
 
-exports.patchSpeciality = async (req, res) => {
-    const speciality = await specialityService.patchSpeciality(req.params.id, req.body);
+exports.patchSpecialite = async (req, res) => {
     try {
-        if (!speciality)
+           const specialite = await specialiteService.patchSpecialite(req.params.id, req.body);
+        if (!specialite)
             return res.status(404).json({ message: "Spécialité introuvable" });
-        res.json(speciality).send('Spécialité modifiée avec succès');
+        res.json(Specialite);
     } catch (error) {
-        res.status(500).json({ message: "Erreur serveur", error: err.message });
+        res.status(500).json({ message: "Erreur serveur", error: error.message });
     }
 };
 
-exports.deleteSpeciality = async (req, res) => {
-    console.log("ID reçu :", req.params.id);
-    const speciality = await specialityService.deleteSpeciality(req.params.id);
+exports.deleteSpecialite = async (req, res) => {
     try {
-        if (!speciality)
+         const specialite = await SpecialiteService.deleteSpecialite(req.params.id);
+        if (!specialite)
             return res.status(404).json({ message: "Spécialité introuvable" });
-        res.status(204).send('Spécialité supprimée avec succès');
+        res.status(204);
     } catch (error) {
-        res.status(500).json({ message: "Erreur serveur", error: err.message });
+        res.status(500).json({ message: "Erreur serveur", error: error.message });
     }
     
 };

@@ -34,8 +34,7 @@ exports.patchArtisan = async (id, data) => {
 // Supprimer un artisan
 exports.deleteArtisan = async (id) => {
     const artisan = await Artisan.findByPk(id);
-    if (!artisan) return false;
-
+    if (!artisan) return null;
     await artisan.destroy();
     return true;
 };
