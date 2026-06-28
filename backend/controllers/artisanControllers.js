@@ -29,7 +29,16 @@ exports.createArtisan = async (req, res) => {
         res.status(400).json({ message: error.message });
     }
 };
-
+exports.patchArtisan = async (req, res) => {
+    try {
+        const artisan = await artisanService.patchArtisan(req.params.id, req.body);
+        if (!artisan)
+            return res.status(404).json({ message: "Artisan introuvable" });
+        res.json(artisan);
+    } catch (error) {
+        res.status(500).json({ message: "Erreur serveur", error: error.message });
+    }
+};
 exports.updateArtisan = async (req, res) => {
     
     try {
