@@ -1,8 +1,9 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/db');
 const bcrypt = require('bcrypt');
+const { tableName } = require('sequelize/lib/model');
 
-const Artisan = sequelize.define('Artisan', {
+const Artisan = sequelize.define('artisan', {
   id_artisan: {
     type: DataTypes.INTEGER,
     autoIncrement: true,
@@ -46,17 +47,19 @@ const Artisan = sequelize.define('Artisan', {
       },
     },
   },
-  specialiteId: {
-    type: DataTypes.INTEGER,
-    allowNull: false,
-  },
+  //id_specialite: {
+    //type: DataTypes.INTEGER,
+    //allowNull: false,
+  //},
   top_artisan: {
     type: DataTypes.BOOLEAN,
     allowNull: false,
     defaultValue: false,
   }
 }, {
-  timestamps: true,   // Crée createdAt et updatedAt automatiquement
+  tableName: 'artisan',
+  timestamps: false
 });
+
 
 module.exports = Artisan;

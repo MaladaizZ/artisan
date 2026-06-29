@@ -20,7 +20,7 @@ const Specialite = sequelize.define(
   },
   {
     tableName: "specialite",
-    timestamps: false,
+    timestamps: false
   },
 );
 

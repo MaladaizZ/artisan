@@ -1,5 +1,4 @@
 const { Artisan } = require("../models/index");
-
 // Récupérer tous les artisans
 exports.getAllArtisans = async () => {
     return await Artisan.findAll();

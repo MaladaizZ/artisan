@@ -7,8 +7,8 @@ Categorie.hasMany(Specialite, { foreignKey: 'Cat_Id' });
 Specialite.belongsTo(Categorie, { foreignKey: 'Cat_Id' });
 
 // Relation 1:N entre Specialite et Artisan
-Specialite.hasMany(Artisan, { foreignKey: 'Spe_Id' });
-Artisan.belongsTo(Specialite, { foreignKey: 'Spe_Id' });
+Specialite.hasMany(Artisan, { foreignKey: 'id_specialite' });
+Artisan.belongsTo(Specialite, { foreignKey: 'id_specialite' });
 
 
 module.exports = { Categorie, Specialite, Artisan };

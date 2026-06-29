@@ -14,8 +14,8 @@ router.get('/', async (req, res) => {
     });
 });
 
-router.use('/artisans', artisanRoutes);
-router.use('/categories', categorieRoutes);
-router.use('/specialites', specialiteRoutes);
+router.use('/artisan', artisanRoutes);
+router.use('/categorie', categorieRoutes);
+router.use('/specialite', specialiteRoutes);
 
 module.exports = router;
