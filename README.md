@@ -12,7 +12,6 @@ Maquette Figma :
 
 
 
-Présentation du Modèle Conceptuel de Données (MCD),Modèle Logique de Données MLD :
 
 
 Lien du repo Github :
