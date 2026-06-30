@@ -17,7 +17,7 @@ Site dédié aux artisans de la région, permettant aux particuliers de trouver 
 # Lien du repo Github :
 https://github.com/MaladaizZ/artisan.git
 Lien du site en ligne :
-https://artisan-7tr7.onrender.com
+https://artisan-n48h.onrender.com
 
 # Lancement du Front : 
 *Npm run dev
@@ -27,10 +27,13 @@ https://artisan-7tr7.onrender.com
 
 
 # Techno utilisé :
+Maquettage : Figma
 
 Front : Vite , Boostrap , ( swagger )
 
 Back :Express.js , Sequelize, Nodemon
+
+Deploiement : Render
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
